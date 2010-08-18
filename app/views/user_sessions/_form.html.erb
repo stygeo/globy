@@ -1,0 +1,11 @@
+<h1>Login</h1>
+<%= semantic_form_for @user_session do |f| %>
+	<%= f.inputs do %>
+		<%= f.input :email %>
+		<%= f.input :password %>
+	<% end %>
+	
+	<% f.buttons do %>
+		<%= f.submit t(".submit") %>
+	<% end %>
+<% end %>

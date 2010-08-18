@@ -1,0 +1,101 @@
+* {
+	margin: 0;
+}
+html, body {
+	height: 100%;
+}
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -142px; /* the bottom margin is the negative value of the footer's height */
+}
+#footer, .push {
+	height: 142px; /* .push must be the same height as .footer */
+}
+
+#footer .inner {
+	margin: 0 auto;
+}
+
+body {
+	background:#CCCCCC;
+	margin:0;
+	padding:0;
+}
+
+li,ul {
+	list-style:none;
+}
+ol {
+	margin:0;
+	padding:0;
+}
+
+fieldset {
+	margin:0;
+	padding:0;
+	border:none;
+}
+
+label {
+	display:block;
+}
+
+#main {
+	margin: 0 auto;
+	width: 70%;
+}
+
+#login-home {
+	padding: 20px
+}
+
+#new-user-dialog input[type='text'], #new-user-dialog input[type='password'	] {
+	height: 30px;
+	font-size: 18pt;
+	width: 250px;
+	border-color: #CCC;
+	border:2px solid #000;
+}
+
+#login-home input[type='text'], #login-home input[type='password'] {
+	height: 30px;
+	font-size: 18pt;
+	width: 250px;
+	border-color: #CCC;
+	border:2px solid #000;
+}
+
+.upper {
+	text-transform:uppercase;
+}
+
+.highlight {
+	color:#CCCCCC;
+}
+
+.fl {
+	float:left;
+}
+
+.rounded-corner {
+	-moz-border-radius:20px;
+	-webkit-border-radius:20px;
+	border-radius: 20px;
+}
+
+.large-border {
+	border: 10px solid;
+}
+
+.clear_div {
+	content:" ";
+	height:0;
+	width:0;
+	clear:both;
+}
+
+.w300 {
+	width:300px;
+}

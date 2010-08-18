@@ -1,0 +1,47 @@
+<%= content_for :head do %>
+	<script type="text/javascript">
+		$(function() {
+			$('#new-user-dialog').dialog({
+				autoOpen:false,
+				modal:true,
+				draggable:false,
+				resizeable:false,
+				closeOnEscape:true,
+				width: 500,
+				height: 350
+			});
+			$('#new-user').click(function(){
+				$('#new-user-dialog').dialog('open');
+			});
+		});
+	</script>
+<% end %>
+
+
+<div class"fl w300">
+	<h1>Welcome to Globy</h1>
+	Globy is a free GPS location service. Free in the sense of; we love OpenSource and/or free software. So is your software free? Then Globy is free for you.
+	But if you're one of the baddies, well, hand is the doe! But we're not expensive, we're rather cheap and offer several kinds blah blah
+</div>
+
+<div id="login-home" class="fl rounded-corner large-border">
+	<div class"upper">Please <span class="highlight">login</span> or create a <%= link_to_function t('.new'), new_user_url, :id => 'new-user' %> account</div>
+	<%= semantic_form_for UserSession.new do |f| %>
+		<%= f.inputs do %>
+			<%= f.input :email, :html => {:class => 'large-input'} %>
+			<%= f.input :password %>
+		<% end %>
+	
+		<%= f.buttons do %>
+			<%= f.submit %>
+		<% end %>
+	<% end %>
+</div>
+
+<%= clear_div %>
+
+<div id="new-user-dialog" title="<%= t('.register') %>">
+	<%= semantic_form_for User.new do |f| %>
+		<%= render :partial => 'users/form', :locals => {:f => f}%>
+	<% end %>
+</div>
