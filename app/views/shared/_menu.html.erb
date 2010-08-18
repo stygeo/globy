@@ -1,0 +1,5 @@
+<ol>
+	<% if current_user.present? %>
+		<li><%= link_to t(".dashboard"), dashboard_url %></li>
+	<% end %>
+</ol>

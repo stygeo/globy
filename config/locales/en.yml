@@ -6,3 +6,11 @@ en:
     index:
       new: new
       register: Register
+  dashboards:
+    show:
+      new_project: New project
+      manage_projects: Manage projects
+  projects:
+    overview:
+      edit: Edit
+      stats: Statistics

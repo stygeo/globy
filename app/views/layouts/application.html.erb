@@ -6,6 +6,7 @@
 		<%#= javascript_include_tag :defaults %>
 		<%= javascript_include_tag '/javascripts/jquery.js' %>
 		<%= javascript_include_tag '/javascripts/jquery-ui.js' %>
+		<%= javascript_include_tag '/javascripts/application.js' %>
 		<%= stylesheet_link_tag '/stylesheets/jquery-ui.css' %>
 		<%= csrf_meta_tag %>
 		<%= yield :head %>
@@ -15,10 +16,12 @@
 			<div id="header">
 				<h1>Globy</h1>
 				<div id="menu">
-					<div id="utils">
+					<div id="utils" class="fr">
 						<%= button_to(t('.logout'), user_session_path(current_user), :method => :delete) if current_user.present? %>
 					</div>
 				</div>
+				
+				<%= render :partial => 'shared/menu' %>
 			</div>
 		
 			<div id="main">

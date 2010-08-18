@@ -1,5 +1,5 @@
 class UsersController < InheritedResources::Base
-	actions :all 
+	actions :create
 	
 	def create
 		create! do |success, failure|

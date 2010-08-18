@@ -24,20 +24,21 @@
 	But if you're one of the baddies, well, hand is the doe! But we're not expensive, we're rather cheap and offer several kinds blah blah
 </div>
 
-<div id="login-home" class="fl rounded-corner large-border">
-	<div class"upper">Please <span class="highlight">login</span> or create a <%= link_to_function t('.new'), new_user_url, :id => 'new-user' %> account</div>
-	<%= semantic_form_for UserSession.new do |f| %>
-		<%= f.inputs do %>
-			<%= f.input :email, :html => {:class => 'large-input'} %>
-			<%= f.input :password %>
-		<% end %>
+<% unless current_user %>
+	<div id="login-home" class="fl rounded-corner large-border">
+		<div class"upper">Please <span class="highlight">login</span> or create a <%= link_to_function t('.new'), new_user_url, :id => 'new-user' %> account</div>
+		<%= semantic_form_for UserSession.new do |f| %>
+			<%= f.inputs do %>
+				<%= f.input :email, :html => {:class => 'large-input'} %>
+				<%= f.input :password %>
+			<% end %>
 	
-		<%= f.buttons do %>
-			<%= f.submit %>
+			<%= f.buttons do %>
+				<%= f.submit %>
+			<% end %>
 		<% end %>
-	<% end %>
-</div>
-
+	</div>
+<% end %>
 <%= clear_div %>
 
 <div id="new-user-dialog" title="<%= t('.register') %>">
