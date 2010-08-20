@@ -10,7 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100818132512) do
+ActiveRecord::Schema.define(:version => 20100819192401) do
+
+  create_table "locations", :force => true do |t|
+    t.integer  "project_id"
+    t.integer  "user_id"
+    t.decimal  "longitude"
+    t.decimal  "latitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "projects", :force => true do |t|
     t.string   "name"
@@ -40,6 +49,8 @@ ActiveRecord::Schema.define(:version => 20100818132512) do
     t.integer  "login_count"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "develop"
+    t.boolean  "developer"
   end
 
 end

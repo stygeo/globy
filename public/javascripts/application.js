@@ -3,9 +3,22 @@
 
 
 $(function() {
-	$(".project_box").hover(function() {
-		$(this).addClass('mouse-over')
+	$("a.project_box").hover(function() {
+		$(this).find('.toolbox').removeClass('hidden')
 	}, function() {
-		$(this).removeClass('mouse-over')
+		$(this).find('.toolbox').addClass('hidden')
+	});
+	
+	$('#new-user-dialog').dialog({
+		autoOpen:false,
+		modal:true,
+		draggable:false,
+		resizeable:false,
+		closeOnEscape:true,
+		width: 500,
+		height: 370
+	});
+	$('#new-user').click(function(){
+		$('#new-user-dialog').dialog('open');
 	});
 })

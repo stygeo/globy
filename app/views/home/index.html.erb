@@ -1,23 +1,3 @@
-<%= content_for :head do %>
-	<script type="text/javascript">
-		$(function() {
-			$('#new-user-dialog').dialog({
-				autoOpen:false,
-				modal:true,
-				draggable:false,
-				resizeable:false,
-				closeOnEscape:true,
-				width: 500,
-				height: 350
-			});
-			$('#new-user').click(function(){
-				$('#new-user-dialog').dialog('open');
-			});
-		});
-	</script>
-<% end %>
-
-
 <div class"fl w300">
 	<h1>Welcome to Globy</h1>
 	Globy is a free GPS location service. Free in the sense of; we love OpenSource and/or free software. So is your software free? Then Globy is free for you.

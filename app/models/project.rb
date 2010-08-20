@@ -1,6 +1,7 @@
 class Project < ActiveRecord::Base
 	belongs_to :owner, :class_name => User
-
+	
+	has_many :locations
 	has_many :user_subscriptions, :foreign_key => :subscriber_id
 	has_many :subscribers, :through => :user_subscriptions
 	

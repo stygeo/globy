@@ -1,8 +1,12 @@
 Globy::Application.routes.draw do
+  resources :locations
+
   resources :projects
 
   resources :user_sessions
 	resource :dashboard
+	resource :developer_dashboard
+	
 	resources :users do
 		resources :projects
 	end

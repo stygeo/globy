@@ -1,4 +1,5 @@
 class UsersController < InheritedResources::Base
+	skip_before_filter :require_auth
 	actions :create
 	
 	def create

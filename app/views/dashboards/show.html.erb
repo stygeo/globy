@@ -1,12 +1,11 @@
-<h1>Dashboard</h1>
+<h1><%= t('.title') %></h1>
+<%= t('.welcome_message', :firstname => current_user.firstname) %>
 
-<h2>Overview of projects</h2>
-<ul class="menu">
-	<li><%= link_to(t('.new_project'), new_user_project_url(current_user)) %></li>
-	<li><%= link_to(t('.manage_projects'), user_projects_url(current_user)) %></li>
-</ul>
-<%= clear_div %>
-
-<% current_user.projects.each do |project| %>
-	<%= render :partial => 'projects/overview', :locals => {:project => project} %>
+<h2><%= t('.subscribed_projects')%></h2>
+<% if current_user.subscriptions.present? %>
+	<% current_user.subscriptions.each do |project| %>
+		<%= render :partial => 'projects/user_overview', :locals => {:project => project} %>
+	<% end %>
+<% else %>
+	<%= t('.no_subscribed_projects') %>
 <% end %>

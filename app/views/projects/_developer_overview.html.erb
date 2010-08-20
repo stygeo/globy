@@ -1,0 +1,8 @@
+<%= link_to user_project_url(current_user, project), :class => "project_box" do %>
+	<div>
+		<h2><%= project.name %></h2>
+
+		<div><strong class="w200">Subscribers: </strong><%= project.subscribers.count %></div>
+		<div><strong class="w200">Positions acquired: </strong><%= project.locations.count %> >:)</div>
+	</div>
+<% end %>

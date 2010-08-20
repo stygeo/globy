@@ -1,0 +1,17 @@
+<h1><%= t('.title')%></h1>
+<ul class="menu">
+	<li><%= link_to(t('.new_project'), new_user_project_url(current_user)) %></li>
+	<li><%= link_to(t('.manage_projects'), user_projects_url(current_user)) %></li>
+</ul>
+<%= clear_div %>
+
+<h2><%= t('.project_overview')%></h2>
+
+<% if current_user.projects.present? %>
+	<% current_user.projects.each do |project| %>
+		<%= render :partial => 'projects/developer_overview', :locals => {:project => project} %>
+	<% end %>
+<% else %>
+	<%= t('.no_projects') %>
+	<%= link_to t('.start_new_project_link'), new_user_project_url(current_user)%>
+<% end %>

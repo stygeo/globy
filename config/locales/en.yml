@@ -2,15 +2,37 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  logged_in_success: Succesfully logged in
+  logged_out_succes: Succesfully logged out
+  layouts:
+    application:
+      logout: Logout
   home:
     index:
       new: new
       register: Register
   dashboards:
     show:
+      subscribed_projects: Subscribed Projects
+      title: Dashboard
+      no_subscribed_projects: You don't have any subscriptions.
+      welcome_message: Hi {{firstname}}, this is your personal Dashboard.
+  developer_dashboards:
+    show:
       new_project: New project
       manage_projects: Manage projects
+      title: Developer Dashboard
+      project_overview: Overview of projects
+      no_projects: You don't have any projects.
+      start_new_project_link: Start new project
   projects:
-    overview:
+    developer_overview:
       edit: Edit
       stats: Statistics
+  users:
+    form:
+      developer: Are you a developer?
+  shared:
+    menu:
+      dashboard: Global Dashboard
+      developer_dashboard: Developer Dashboard
