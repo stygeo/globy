@@ -4,21 +4,24 @@
 html, body {
 	height: 100%;
 }
-h2 {
-	border-bottom: 1px solid #ccc;
-}
+
 .wrapper {
 	min-height: 100%;
 	height: auto !important;
 	height: 100%;
-	margin: 0 auto -142px; /* the bottom margin is the negative value of the footer's height */
+	margin: 0 auto -20px; /* the bottom margin is the negative value of the footer's height */
 }
 #footer, .push {
-	height: 142px; /* .push must be the same height as .footer */
+	height: 20px; /* .push must be the same height as .footer */
+}
+#footer {
+	border-top: 1px #ccc;
+	background: #E6E6E6;
 }
 
 #footer .inner {
 	margin: 0 auto;
+	text-align:center;
 }
 
 body {
@@ -47,7 +50,7 @@ label {
 
 #main {
 	margin: 0 auto;
-	width: 70%;
+	width: 85%;
 }
 
 #login-home {
@@ -107,12 +110,6 @@ label {
 	width:300px;
 }
 
-.project_box {
-	margin: 10px 0;
-	padding: 5px;
-	border:2px solid #000;
-}
-
 ul.menu {
 	margin:0;
 	padding:0;
@@ -132,15 +129,86 @@ ul.menu li {
 	display:none;
 }
 
-a.project_box, a:visited.project_box {
-	color:#000;
-	display:block;
-	width:100%;
-	text-decoration:none;
+/* Box set start */
+.header {
+	padding-bottom: 5px;
+	border-bottom: 1px dotted #ccc;
+	margin-top: 45px;
+	height: 30px;
+}
+.project-box-set {
+	width: 48%;
+	float:left;
+	margin-right:20px;
 }
 
-a:hover.project_box {
-	background:#ccc;
-	color: #000;
+dev.project-box-set-devider {
+	width: 5%;
+	float:left;
+}
+
+.project_box {
+	padding: 5px;
+	background: #E6E6E6 url(http://localhost:3001/stylesheets/images/ui-bg_glass_75_e6e6e6_1x400.png) repeat-x 50% 50%;
+	padding: 0 40px 0 30px;
+	color:#000;
+	display:block;
 	text-decoration:none;
+	height: 80px;
+	border: 1px solid #CCC;
+}
+.project_box h2 {
+	margin-top: 30px;
+}
+
+.project-box-hover {
+	background:#B4C2CF;
+	text-decoration:none;
+	cursor:pointer;
+}
+
+.project-box-hover h2 {
+		color: #FFF;
+}
+
+.project_box h2.right {
+		font-size: 12pt;
+}
+
+div.project_box h2 {
+	border-bottom:none;
+}
+
+/* Box set end */
+.entries {
+	padding-top: 10px;
+}
+/* Feed entry set */
+.sample-box {
+	background:#B4C2CF;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	padding:15px 30px;
+	color: white;
+	font-size: 12pt;
+	margin-bottom:10px;
+}
+
+.feed-entry {
+	background:#CCC;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+/* Feed entry set end */
+.feed-icon {
+	background: transparent url(/images/feed-icon.png) no-repeat right;
+	padding-right: 20px;
+}
+
+.white, span.white a {
+	color:#FFF;
 }

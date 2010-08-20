@@ -3,10 +3,18 @@
 
 
 $(function() {
-	$("a.project_box").hover(function() {
-		$(this).find('.toolbox').removeClass('hidden')
+	$("div.project_box").hover(function() {
+		$(this).addClass("project-box-hover");
+		$(this).find('.toolbox').removeClass('hidden');
 	}, function() {
-		$(this).find('.toolbox').addClass('hidden')
+		$(this).removeClass("project-box-hover");
+		$(this).find('.toolbox').addClass('hidden');
+	});
+	
+	$('.close-click').click(function() {
+		$(this).fadeOut("slow", function() {
+				$(this).remove();
+			})
 	});
 	
 	$('#new-user-dialog').dialog({

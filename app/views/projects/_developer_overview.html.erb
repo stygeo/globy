@@ -1,8 +1,17 @@
-<%= link_to user_project_url(current_user, project), :class => "project_box" do %>
-	<div>
+<div class="project_box" onclick="window.location.pathname='<%= user_project_path(current_user, project) %>'">
+	<div class="fl">
 		<h2><%= project.name %></h2>
-
-		<div><strong class="w200">Subscribers: </strong><%= project.subscribers.count %></div>
-		<div><strong class="w200">Positions acquired: </strong><%= project.locations.count %> >:)</div>
+		<div class="toolbox hidden">
+			<%= link_to(t('.edit'), edit_user_project_url(current_user, project))%>
+			<%= link_to(t('.stats'), '#')%>
+		</div>
 	</div>
-<% end %>
+	
+	<h2 class="fr small right">
+		<% if project.users.blank? %>
+			<%= t('.no_subscribers') %>
+		<% else %>
+			<%= t('.amount_subscribers', :count => project.users.count) %>
+		<% end %>
+	</h2>
+</div>

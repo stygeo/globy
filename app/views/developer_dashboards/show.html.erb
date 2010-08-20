@@ -1,17 +1,49 @@
 <h1><%= t('.title')%></h1>
-<ul class="menu">
-	<li><%= link_to(t('.new_project'), new_user_project_url(current_user)) %></li>
-	<li><%= link_to(t('.manage_projects'), user_projects_url(current_user)) %></li>
-</ul>
+
+<div class="project-box-set">
+	<div class="projects-list">
+		<div class="header">
+			<h2 class="fl"><%= t('.project_overview')%></h2>
+			<%= link_to new_user_project_url(current_user), :class => 'ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only fr' do %>
+				<span class="ui-button-text"><%= t('.new_project') %></span>
+			<% end %>
+			<%= clear_div %>
+		</div>
+
+		<div class="entries">
+			<% if current_user.projects.present? %>
+				<% current_user.projects.each do |project| %>
+					<%= render :partial => 'projects/developer_overview', :locals => {:project => project} %>
+				<% end %>
+			<% else %>
+				<div class="sample-box">
+					<%= t('.no_projects') %>
+					<%= link_to t('.start_new_project_link'), new_user_project_url(current_user)%>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+<div class="project-box-set-devider"> </div>
+<div class="project-box-set">
+	<div class="header">
+		<h2 class="fl">Your feed</h2>
+		<%= link_to t('.subscribe'), 'feed', :class => 'feed-icon fr' %>
+		<%= clear_div %>
+	</div>
+	<div class="entries">
+		<div class="sample-box close-click">
+			This is your activity feed. Your most recent activity, such as subscriptions, will be displayed here.
+		</div>
+		<% current_user.feed(10).each do |feed_entry| %>
+			<div class="feed-entry">
+				<span class="white"><%= feed_entry.user.name %></span> 
+				subscribed to: 
+				<span class="white"><%= link_to feed_entry.subscription.name, user_project_path(current_user, feed_entry.subscription) %></span> 
+				at 
+				<span class="white"><%= l feed_entry.created_at if feed_entry.created_at.present? %></span>
+			</div>
+		<% end %>
+	</div>
+</div>
 <%= clear_div %>
-
-<h2><%= t('.project_overview')%></h2>
-
-<% if current_user.projects.present? %>
-	<% current_user.projects.each do |project| %>
-		<%= render :partial => 'projects/developer_overview', :locals => {:project => project} %>
-	<% end %>
-<% else %>
-	<%= t('.no_projects') %>
-	<%= link_to t('.start_new_project_link'), new_user_project_url(current_user)%>
-<% end %>

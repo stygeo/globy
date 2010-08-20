@@ -1,0 +1,15 @@
+<h1><%= t('.project_title', :project_title => @project.name) %></h1>
+<div class="header">
+	<h2>Project Subscriptions</h2>
+</div>
+<div class="projects-list">
+	<% if @project.users.present? %>
+		<% @project.users.each do |subscriber| %>
+			<%= subscriber.name %>
+		<% end %>
+	<% else %>
+		<div class="sample-box">
+			No subscriptions. No hurry though, you'll get them soon enough.
+		</div>
+	<% end %>
+</div>
