@@ -5,6 +5,17 @@ html, body {
 	height: 100%;
 }
 
+a, a:active, a:visited {
+	color: #FFF;
+}
+
+a {
+	text-decoration:none;
+}
+a:hover {
+	text-decoration:underline;
+}
+
 .wrapper {
 	min-height: 100%;
 	height: auto !important;
@@ -97,10 +108,17 @@ label {
 	background: transparent url(/images/icons/16/on-off.png) right no-repeat;
 }
 
+#header a {
+	color: white;
+}
+
 #utils a {
 	float:left;
-	color: #FFF;
 	margin-left: 10px;
+}
+
+a.logout, a:hover.logout, a:visited.logout, a:active.logout {
+	font-weight: bold;
 }
 
 #header {

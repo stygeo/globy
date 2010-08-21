@@ -14,6 +14,7 @@ en:
     application:
       logout: Logout
       account: Account
+      slogan: The true meaning of 'following' / The cute GPS service
   home:
     index:
       new: new

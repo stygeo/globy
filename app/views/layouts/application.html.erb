@@ -16,12 +16,12 @@
 			<div id="header">
 				<div class="fl">
 					<h1>Globy</h1>
-					The true meaning of 'following'
+					<%= t('.slogan') %>
 				</div>
 				<div id="menu" class="fr">
 					<div id="utils">
 						<%= link_to(t('.account'), user_path(current_user), :class => 'icon-right-small icon-account') if current_user.present?%>
-						<%= link_to(t('.logout'), user_session_path(current_user), :method => :destroy, :class => 'icon-right-small icon-logout') if current_user.present? %>
+						<%= button_to(t('.logout'), user_session_path(current_user), :method => :delete, :class => 'icon-right-small icon-logout logout') if current_user.present? %>
 					</div>
 				</div>
 				<%= clear_div %>
