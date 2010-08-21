@@ -6,7 +6,7 @@ html, body {
 }
 
 a, a:active, a:visited {
-	color: #FFF;
+	color: #000;
 }
 
 a {
@@ -125,24 +125,44 @@ a.logout, a:hover.logout, a:visited.logout, a:active.logout {
 	background: #000;
 	color: #FFF;
 	height: 130px;
+	border-bottom: 7px solid #ccc;
 }
 #header h1 {
 	padding: 20px;
 }
 
 #main-menu {
-	margin:0;
-	margin-top: 29px;
+	margin: 0 auto;
+	margin-top: 2px;
+	width: 900px;
+	padding: 10px;
 }
 
 #main-menu a {
-	display:inline-block;
+	min-width: 100px;
+	text-align:center;
+	line-height: 30px;
+	background: #666;
+	margin-right: 5px;
+	padding: 5px;
+	-moz-border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+	border-radius:5px 5px 0 0;
+}
+
+#main-menu a.selected, #main-menu a:hover {
+	background:#ccc;
+	color:#000;
+}
+
+#main-menu a {
+	float: right;
 	height: 30px;
 	padding-right:10px;
 	color: #fff;
 }
 
-#main-menu li a, #main-menu li a:hover {
+#main-menu a, #main-menu a:hover {
 	text-decoration:none;
 }
 

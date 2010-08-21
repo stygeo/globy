@@ -1,9 +1,12 @@
 <div id="main-menu" class="menu">
+	<%= link_to t('.pricing'), '#', :class => :selected %>
+	<%= link_to t('.features'), '#' %>
+	<%= link_to t('.about'), '#' %>
 	<% if current_user.present? %>
-		<%= link_to t(".dashboard"), dashboard_url %>
 		<% if current_user.developer? %>
 			<%= link_to t(".developer_dashboard"), developer_dashboard_url %>
 		<% end %>
+		<%= link_to t(".dashboard"), dashboard_url %>
 	<% end %>
 </div>
 <%= clear_div %>

@@ -14,7 +14,7 @@ en:
     application:
       logout: Logout
       account: Account
-      slogan: The true meaning of 'following' / The cute GPS service
+      slogan: The cute GPS service
   home:
     index:
       new: new
@@ -52,3 +52,6 @@ en:
     menu:
       dashboard: Global Dashboard
       developer_dashboard: Developer Dashboard
+      about: How it works
+      features: Features
+      pricing: Pricing and licensing
