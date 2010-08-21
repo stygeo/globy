@@ -16,6 +16,9 @@ class User < ActiveRecord::Base
 	
 	def feed(amount)
 		project_ids = self.projects.map(&:id)
-		UserSubscription.where('projects.owner_id = ? AND user_subscriptions.subscription_id IN (?)', self.id, project_ids).includes(:subscription).order('user_subscriptions.created_at DESC').limit(amount)
+		UserSubscription.where('projects.owner_id = ? AND user_subscriptions.subscription_id IN (?)', self.id, project_ids).
+		includes(:subscription).
+		order('user_subscriptions.created_at DESC').
+		limit(amount)
 	end
 end

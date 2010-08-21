@@ -13,6 +13,7 @@ en:
   layouts:
     application:
       logout: Logout
+      account: Account
   home:
     index:
       new: new

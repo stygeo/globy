@@ -48,31 +48,6 @@ label {
 	display:block;
 }
 
-#main {
-	margin: 0 auto;
-	width: 85%;
-}
-
-#login-home {
-	padding: 20px
-}
-
-#new-user-dialog input[type='text'], #new-user-dialog input[type='password'	] {
-	height: 30px;
-	font-size: 18pt;
-	width: 250px;
-	border-color: #CCC;
-	border:2px solid #000;
-}
-
-#login-home input[type='text'], #login-home input[type='password'] {
-	height: 30px;
-	font-size: 18pt;
-	width: 250px;
-	border-color: #CCC;
-	border:2px solid #000;
-}
-
 .upper {
 	text-transform:uppercase;
 }
@@ -108,6 +83,75 @@ label {
 
 .w300 {
 	width:300px;
+}
+
+.icon-right-small {
+	padding-right: 18px;
+}
+
+.icon-account {
+	background: transparent url(/images/icons/16/user.png) right no-repeat;
+}
+
+.icon-logout {
+	background: transparent url(/images/icons/16/on-off.png) right no-repeat;
+}
+
+#utils a {
+	float:left;
+	color: #FFF;
+	margin-left: 10px;
+}
+
+#header {
+	background: #000;
+	color: #FFF;
+	height: 130px;
+}
+#header h1 {
+	padding: 20px;
+}
+
+#main-menu {
+	margin:0;
+	margin-top: 29px;
+}
+
+#main-menu a {
+	display:inline-block;
+	height: 30px;
+	padding-right:10px;
+	color: #fff;
+}
+
+#main-menu li a, #main-menu li a:hover {
+	text-decoration:none;
+}
+
+#main {
+	margin: 0 auto;
+	width: 85%;
+	margin-top: 20px;
+}
+
+#login-home {
+	padding: 20px
+}
+
+#new-user-dialog input[type='text'], #new-user-dialog input[type='password'	] {
+	height: 30px;
+	font-size: 18pt;
+	width: 250px;
+	border-color: #CCC;
+	border:2px solid #000;
+}
+
+#login-home input[type='text'], #login-home input[type='password'] {
+	height: 30px;
+	font-size: 18pt;
+	width: 250px;
+	border-color: #CCC;
+	border:2px solid #000;
 }
 
 ul.menu {

@@ -1,9 +1,9 @@
-<ul class="menu">
+<div id="main-menu" class="menu">
 	<% if current_user.present? %>
-		<li><%= link_to t(".dashboard"), dashboard_url %></li>
+		<%= link_to t(".dashboard"), dashboard_url %>
 		<% if current_user.developer? %>
-			<li><%= link_to t(".developer_dashboard"), developer_dashboard_url %></li>
+			<%= link_to t(".developer_dashboard"), developer_dashboard_url %>
 		<% end %>
 	<% end %>
-</ul>
+</div>
 <%= clear_div %>
